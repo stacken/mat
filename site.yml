@@ -1,0 +1,7 @@
+---
+
+- hosts:
+    - "*.mat.stacken.kth.se"
+  tasks:
+    - apt:
+        name: emacs
