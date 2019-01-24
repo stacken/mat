@@ -1,0 +1,15 @@
+---
+
+- name: Setup a KVM host
+  hosts:
+    - glass.mat.stacken.kth.se
+
+  tasks:
+    - name: Install packages for KVM
+      apt:
+        name: "{{ item }}"
+      loop:
+        - qemu-kvm
+        - libvirt-daemon-system
+        - libvirt-clients
+        - bridge-utils

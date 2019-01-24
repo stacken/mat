@@ -90,3 +90,5 @@
         name: collectd
         state: restarted
         enabled: yes
+
+- import_playbook: kvm.yml
