@@ -1,0 +1,31 @@
+Hostname "{{ inventory_hostname_short }}"
+FQDNLookup true
+
+LoadPlugin syslog
+LoadPlugin cpu
+LoadPlugin df
+LoadPlugin disk
+LoadPlugin entropy
+LoadPlugin interface
+LoadPlugin irq
+LoadPlugin load
+LoadPlugin memory
+LoadPlugin processes
+LoadPlugin swap
+LoadPlugin users
+LoadPlugin write_graphite
+
+<Plugin syslog>
+        LogLevel info
+</Plugin>
+
+<Plugin write_graphite>
+        <Carbon>
+                Host "graphite.stacken.kth.se"
+                Port "2003"
+                Prefix "collectd."
+                StoreRates false
+                AlwaysAppendDS false
+                EscapeCharacter "_"
+        </Carbon>
+</Plugin>

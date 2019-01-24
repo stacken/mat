@@ -15,6 +15,7 @@
         - emacs
         - neovim
         - sharutils
+        - collectd-core
 
     - name: Deploy sshkeys from GH
       authorized_key:
@@ -78,3 +79,8 @@
         - nsg
         - fabian
         - kaj
+
+    - name: Deploy collectd.conf file
+      template:
+        src: templates/collectd.conf.j2
+        dest: /etc/collectd/collectd.conf
