@@ -20,6 +20,7 @@
       authorized_key:
         user: root
         key: "https://github.com/{{ item }}.keys"
+        comment: "GitHub user {{ item }}"
       loop:
         - nsg
         - fabstr
