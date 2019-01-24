@@ -84,3 +84,9 @@
       template:
         src: templates/collectd.conf.j2
         dest: /etc/collectd/collectd.conf
+
+    - name: Enable and start collectd
+      service:
+        name: collectd
+        state: restarted
+        enabled: yes
