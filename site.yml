@@ -1,7 +1,26 @@
 ---
 
-- hosts:
+- name: Generic install for mat servers
+  hosts:
     - "*.mat.stacken.kth.se"
   tasks:
-    - apt:
-        name: emacs
+    - name: Install packages
+      apt:
+        name: "{{ item }}"
+      loop:
+        - fail2ban
+        - heimdal-clients
+        - tmux
+        - screen
+        - emacs
+        - neovim
+        - sharutils
+
+      - name: Deploy sshkeys from GH
+        authorized_key:
+          user: root
+          key: "https://github.com/{{ item }}.keys"
+        loop:
+          - nsg
+          - fabstr
+          - kaj
