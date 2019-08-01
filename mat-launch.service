@@ -7,6 +7,7 @@ ExecStartPre=/usr/bin/curl -o /tmp/install.sh https://raw.githubusercontent.com/
 ExecStartPre=/bin/chmod +x /tmp/install.sh
 ExecStart=/tmp/install.sh
 PrivateTmp=yes
+Environment=HOME=/root
 Type=oneshot
 
 [Install]
