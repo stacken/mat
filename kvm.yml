@@ -2,7 +2,7 @@
 
 - name: Setup a KVM host
   hosts:
-    - glass.mat.stacken.kth.se
+    - nonexistent
 
   tasks:
     - name: Install packages for KVM
