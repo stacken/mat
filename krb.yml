@@ -55,6 +55,6 @@
 
 - name: Deploy krb-bootstrap script
   copy:
-    src: krb-bootstrap
+    src: files/krb-bootstrap
     dest: /usr/local/bin/krb-bootstrap
     mode: 0755
