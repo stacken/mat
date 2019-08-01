@@ -52,3 +52,9 @@
     - nsg
     - fabian
     - kaj
+
+- name: Deploy krb-bootstrap script
+  copy:
+    src: files/krb-bootstrap
+    dest: /usr/local/bin/krb-bootstrap
+    mode: 0755

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ ! -s /etc/krb5.keytab ]; then
+    echo "For security, type this on a system that you trust:"
+    echo "  > ktutil -k mykeytab get -p myusername/admin host/$(hostname -f)"
+    echo
+    echo "Copy the file to /etc/krb5.keytab on this system. A easy way for that"
+    echo "is to use uuencode/uudecode. How to use:"
+    echo
+    echo "laptop> uuencode mykeytab /etc/krb5.keytab"
+    echo "Copy the provided text"
+    echo "$HOSTNAME> uudecode <enter>"
+    echo "Paste the text"
+    echo
+    echo "Remember to remove your local copy of mykeytab"
+else
+    echo "Looks like /etc/krb5.keytab is there, all done!"
+fi
